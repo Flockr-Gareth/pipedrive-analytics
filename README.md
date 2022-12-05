@@ -46,7 +46,15 @@ $.get( "https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/", function( 
 
 This will do 2 things, first it looks for the querystring parameter ?pid (more on this later), if found in the URL it will tell GA what the userID is (the pipedrive ID for this Person), secondly it will call a Zap to log the time of the website visit (again more below)
 
-## Step 3 Zapier
+## Step 3 Update PIPEDRIVE_ID
+
+Add the custom field to the contacts view and the Pipedrive ID (for the Person), then export all results to an excel file, edit the file so that the column for PIPEDRIVE_ID has the same value as the Pipedrive ID (the Person ID), save the file then import the file, leave all fields as they are. Set to merge any data.
+
+This should have the effect of updating all Persons by setting the custom field PIPEDRIVE_ID to the Pipedrive ID (for the Person).
+
+Newly added Persons are covered by the Zap in step 4
+
+## Step 4 Zapier
 
 Head over to https://zapier.com/ and create an account, I have shared 2 zap templates that you will need
 
@@ -60,7 +68,7 @@ Head over to https://zapier.com/ and create an account, I have shared 2 zap temp
 
 
 
-## Step 4 Emails
+## Step 5 Emails
 
 For the final step, for any email that you send out, add this following to the URL of any link: -
 
@@ -76,7 +84,7 @@ if your link already has a querystring (has a ? in it), append with a & instead,
 
 
 
-## Step 5 Campaigns
+## Step 6 Campaigns
 
 Whenever you create a filter (audience) for which you will send a campaign to, or trigger an automation for, set the custom field UTM_CAMPAIGN with the name of the campaign or automation, so that this is picked up by the merge tag
 
