@@ -48,15 +48,13 @@ This will do 2 things, first it looks for the querystring parameter ?pid (more o
 
 ## Step 3 Zapier
 
-Head over to https://zapier.com/ and create an account, I have shared 3 zap templates that you will need
+Head over to https://zapier.com/ and create an account, I have shared 2 zap templates that you will need
 
-1. https://zapier.com/shared/c98e563a0de669f93da1030fd5b1ee37b07e268e this Zap runs on the hour and loops through all the Persons in your Pipedrive account, finds their Pipedrive ID and sets a the custom field PIPEDRIVE_ID with the value (so you can use it in a merge tag)
+1. https://zapier.com/shared/16cd8b8dbdaea40fa1b50eae28acedff386e661d
    1. You will need to update the Zaps with your account, it will ask for permissions - the Zap runs in your account, this is just a template
    2. You will need to refresh the fields and remove th eunmatched field and select YOUR custom field PIPEDRIVE_ID which you created in step 1, for its value set the ID of the Person from the Find Person step in the Zap
-   3. Once this has run and you have confirmed the field has been populated for all Persons, you can disable the Zap - it runs on the hour (there are ways to make a Zap run manually but its a bit conveluted)
-2. https://zapier.com/shared/16cd8b8dbdaea40fa1b50eae28acedff386e661d
    1. This Zap runs whenever a new Person is added to Pipedrive, it sets the custom field PIPEDRIVE_ID with the Persons ID from Pipedrive
-3. https://zapier.com/shared/355b6b697ad2287ad0e2164bf0c6cb076ff52862
+2. https://zapier.com/shared/355b6b697ad2287ad0e2164bf0c6cb076ff52862
    1. This Zap is called by the script in Step 2 (on your website) to set the Last visit time of a person who visits your website
    2. You will need to update the URL "https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/" with the value of the first step in the Zap (you will have your own URL)
 
