@@ -33,15 +33,16 @@ In order to use merge tags in emails for links (more on this later) you will nee
 
 Add the following script to the header of your website, or use a tag manager, orr however you add tags
 
+```html
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  let usp = new URLSearchParams(location.search);
-if(usp.has('pid')) {
-  gtag('config', 'G-15ESTEYQMW', {'user_id': usp.get('pid')});
-  $.get( "https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/", function( data ) {});
-}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+let usp = new URLSearchParams(location.search);
+	if(usp.has('pid')) {
+gtag('config', 'G-15ESTEYQMW', {'user_id': usp.get('pid')});
+$.get( "https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/", function( data ) {}); }
 </script>
+```
 
 This will do 2 things, first it looks for the querystring parameter ?pid (more on this later), if found in the URL it will tell GA what the userID is (the pipedrive ID for this Person), secondly it will call a Zap to log the time of the website visit (again more below)
 
