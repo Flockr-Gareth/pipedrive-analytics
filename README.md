@@ -78,6 +78,12 @@ if your link already has a querystring (has a ? in it), append with a & instead,
 
 
 
+## Step 5 Campaigns
+
+Whenever you create a filter (audience) for which you will send a campaign to, or trigger an automation for, set the custom field UTM_CAMPAIGN with the name of the campaign or automation, so that this is picked up by the merge tag
+
+
+
 ## Final Thoughts
 
 Until Pipedrive add this as standard this workaround should work.
