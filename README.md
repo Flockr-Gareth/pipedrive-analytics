@@ -40,7 +40,7 @@ function gtag(){dataLayer.push(arguments);}
 let usp = new URLSearchParams(location.search);
 	if(usp.has('pid')) {
 gtag('config', 'G-<your GA ID>', {'user_id': usp.get('pid')});
-$.get( "https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/", function( data ) {}); }
+$.get( `https://hooks.zapier.com/hooks/catch/<your acc>/<your zap>/?pid=usp.get('pid')`, function( data ) {}); }
 </script>
 ```
 
